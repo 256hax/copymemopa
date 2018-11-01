@@ -71,22 +71,22 @@
           <template slot="items" slot-scope="props">
             <td class="text-xs-right">{{ props.item.rowNo }}</td>
             <td class="text-xs">
-              <v-btn flat color="indigo" v-clipboard:copy="props.item.columnA">
+              <v-btn flat small color="indigo" v-clipboard:copy="props.item.columnA">
                 {{ props.item.columnA }}
               </v-btn>
             </td>
             <td class="text-xs">
-              <v-btn flat color="indigo" v-clipboard:copy="props.item.columnB">
+              <v-btn flat small color="indigo" v-clipboard:copy="props.item.columnB">
                 {{ props.item.columnB }}
               </v-btn>
             </td>
             <td class="text-xs">
-              <v-btn flat color="indigo" v-clipboard:copy="props.item.columnC">
+              <v-btn flat small color="indigo" v-clipboard:copy="props.item.columnC">
                 {{ props.item.columnC }}
               </v-btn>
             </td>
             <td class="text-xs">
-              <v-btn flat color="indigo" v-clipboard:copy="props.item.columnD">
+              <v-btn flat small color="indigo" v-clipboard:copy="props.item.columnD">
                 {{ props.item.columnD }}
               </v-btn>
             </td>
@@ -249,6 +249,9 @@ export default {
 
 
 <style>
+* {
+  text-transform: none !important;
+}
 body {
   min-width: 700px;
   min-height: 500px;
