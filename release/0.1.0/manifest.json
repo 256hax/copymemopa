@@ -1,0 +1,20 @@
+{
+  "name": "コピメモパ",
+  "description" : "コピー＆ペースト作業がたくさんある場合に便利な、「コピーしてメモしてペースト」が管理できるメモ帳です。",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": "assets/images/logo/blue-squares-1-24-240544.png"
+  },
+  "icons" : {
+   "128": "assets/images/logo/blue-squares-1-144-240544.png"
+ },
+ "permissions": [
+    "tabs",
+    "background",
+    "contextMenus",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
