@@ -59,10 +59,26 @@
         >
           <template slot="items" slot-scope="props">
             <td class="text-xs-right">{{ props.item.rowNo }}</td>
-            <td class="text-xs">{{ props.item.columnA }}</td>
-            <td class="text-xs">{{ props.item.columnB }}</td>
-            <td class="text-xs">{{ props.item.columnC }}</td>
-            <td class="text-xs">{{ props.item.columnD }}</td>
+            <td class="text-xs">
+              <v-btn flat color="indigo" v-clipboard:copy="props.item.columnA">
+                {{ props.item.columnA }}
+              </v-btn>
+            </td>
+            <td class="text-xs">
+              <v-btn flat color="indigo" v-clipboard:copy="props.item.columnB">
+                {{ props.item.columnB }}
+              </v-btn>
+            </td>
+            <td class="text-xs">
+              <v-btn flat color="indigo" v-clipboard:copy="props.item.columnC">
+                {{ props.item.columnC }}
+              </v-btn>
+            </td>
+            <td class="text-xs">
+              <v-btn flat color="indigo" v-clipboard:copy="props.item.columnD">
+                {{ props.item.columnD }}
+              </v-btn>
+            </td>
             <td class="justify-center layout px-0">
               <v-icon
                 small
@@ -199,6 +215,14 @@ export default {
     _saveToLocalStorage (thisItems) {
       var thisItemsJson = JSON.stringify(thisItems)
       localStorage.setItem('memo1', thisItemsJson) // Save to Chrome localStorage. localStorage Key is fix value 'memo1'.
+    },
+
+    onCopy: function (e) {
+      alert('You just copied: ' + e.text)
+    },
+
+    onError: function (e) {
+      alert('Failed to copy texts')
     }
   }
 }
