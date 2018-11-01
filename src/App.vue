@@ -11,6 +11,16 @@
           ></v-divider>
           <v-spacer></v-spacer>
 
+          <!-- Search -->
+          <v-text-field
+            v-model="search"
+            append-icon="search"
+            label="Search"
+            single-line
+            hide-details
+          ></v-text-field>
+          <!-- /Search -->
+
           <!-- 新規登録 -->
           <v-dialog v-model="dialog" max-width="500px">
             <v-btn slot="activator" color="primary" dark class="mb-2">新規登録</v-btn>
@@ -54,6 +64,7 @@
         <v-data-table
           :headers="headers"
           :items="items"
+          :search="search"
           hide-actions
           class="elevation-1"
         >
@@ -110,6 +121,7 @@ export default {
   name: 'App',
   data: () => ({
     dialog: false,
+    search: '',
     headers: [
       {
         text: '#',
@@ -166,6 +178,13 @@ export default {
         this.items = [
           {
             rowNo: '1',
+            columnA: 'サンプルメモ',
+            columnB: '文字をクリックすると',
+            columnC: 'クリップボードに',
+            columnD: 'コピーされます'
+          },
+          {
+            rowNo: '2',
             columnA: 'サンプルメモ',
             columnB: '赤羽駅 ->',
             columnC: '銀座駅',
