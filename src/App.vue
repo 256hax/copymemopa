@@ -3,13 +3,26 @@
     <v-app id="inspire">
       <div>
         <v-toolbar flat color="white">
-          <v-toolbar-title>コピメモパ</v-toolbar-title>
-          <v-divider
-            class="mx-2"
-            inset
-            vertical
-          ></v-divider>
+          <v-toolbar-title>メモペ</v-toolbar-title>
           <v-spacer></v-spacer>
+
+          <!-- Snackbar -->
+          <v-snackbar
+            v-model="snackbar"
+            :multi-line="mode"
+            :timeout="timeout"
+            :top="y"
+          >
+            {{ text }}
+            <v-btn
+              color="blue"
+              flat
+              @click="snackbar = false"
+            >
+              Close
+            </v-btn>
+          </v-snackbar>
+          <!-- /Snackbar -->
 
           <!-- Search -->
           <v-text-field
@@ -23,7 +36,7 @@
 
           <!-- 新規登録 -->
           <v-dialog v-model="dialog" max-width="500px">
-            <v-btn slot="activator" color="primary" dark class="mb-2">新規登録</v-btn>
+            <v-btn slot="activator" color="primary" dark class="mb-2">メモ追加</v-btn>
             <v-card>
               <v-card-title>
                 <span class="headline">{{ formTitle }}</span>
@@ -71,22 +84,38 @@
           <template slot="items" slot-scope="props">
             <td class="text-xs-right">{{ props.item.rowNo }}</td>
             <td class="text-xs">
-              <v-btn flat small color="indigo" v-clipboard:copy="props.item.columnA">
+              <v-btn
+                flat small
+                v-clipboard:copy="props.item.columnA"
+                v-clipboard:success="onCopy"
+              >
                 {{ props.item.columnA }}
               </v-btn>
             </td>
             <td class="text-xs">
-              <v-btn flat small color="indigo" v-clipboard:copy="props.item.columnB">
+              <v-btn
+                flat small
+                v-clipboard:copy="props.item.columnB"
+                v-clipboard:success="onCopy"
+              >
                 {{ props.item.columnB }}
               </v-btn>
             </td>
             <td class="text-xs">
-              <v-btn flat small color="indigo" v-clipboard:copy="props.item.columnC">
+              <v-btn
+                flat small
+                v-clipboard:copy="props.item.columnC"
+                v-clipboard:success="onCopy"
+              >
                 {{ props.item.columnC }}
               </v-btn>
             </td>
             <td class="text-xs">
-              <v-btn flat small color="indigo" v-clipboard:copy="props.item.columnD">
+              <v-btn
+                flat small
+                v-clipboard:copy="props.item.columnD"
+                v-clipboard:success="onCopy"
+              >
                 {{ props.item.columnD }}
               </v-btn>
             </td>
@@ -121,7 +150,10 @@ export default {
   name: 'App',
   data: () => ({
     dialog: false,
+    /*--- Search ---*/
     search: '',
+
+    /*--- Items ---*/
     headers: [
       {
         text: '#',
@@ -150,7 +182,15 @@ export default {
       columnB: '',
       columnC: '',
       columnD: ''
-    }
+    },
+
+    /*--- Snackbar ---*/
+    snackbar: false,
+    y: 'top',
+    x: null,
+    mode: false,
+    timeout: 2000,
+    text: 'コピーしました！'
   }),
 
   computed: {
@@ -178,18 +218,25 @@ export default {
         this.items = [
           {
             rowNo: '1',
-            columnA: 'サンプルメモ',
-            columnB: '文字をクリックすると',
+            columnA: '入力した文字を',
+            columnB: 'クリックすると',
             columnC: 'クリップボードに',
             columnD: 'コピーされます'
           },
           {
             rowNo: '2',
-            columnA: 'サンプルメモ',
-            columnB: '赤羽駅 ->',
+            columnA: '電車賃メモ',
+            columnB: '恵比寿駅 ->',
             columnC: '銀座駅',
-            columnD: '330円'
-          }
+            columnD: '195円'
+          },
+          {
+            rowNo: '3',
+            columnA: 'URLメモ',
+            columnB: 'https://google.com/',
+            columnC: 'https://amazon.co.jp/',
+            columnD: 'http://kakaku.com/'
+          },
         ]
       }
     },
@@ -236,12 +283,9 @@ export default {
       localStorage.setItem('memo1', thisItemsJson) // Save to Chrome localStorage. localStorage Key is fix value 'memo1'.
     },
 
-    onCopy: function (e) {
-      alert('You just copied: ' + e.text)
-    },
-
-    onError: function (e) {
-      alert('Failed to copy texts')
+    /*--- Snackbar ---*/
+    onCopy: function () {
+      this.snackbar = true
     }
   }
 }
@@ -251,9 +295,12 @@ export default {
 <style>
 * {
   text-transform: none !important;
+  font-family: "Rounded Mplus 1p"; /* Google Japanese Fonts */
 }
+/*
 body {
   min-width: 700px;
   min-height: 500px;
 }
+*/
 </style>
