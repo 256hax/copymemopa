@@ -1,4 +1,4 @@
-# CopyMemoPa コピメモパ
+# CopyMemoPa メモペ
 Copy and Paste Memo Pad for Google Chrome Extensions.
 
 ## Technologies
