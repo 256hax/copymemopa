@@ -236,7 +236,7 @@ export default {
             columnB: 'https://google.com/',
             columnC: 'https://amazon.co.jp/',
             columnD: 'http://kakaku.com/'
-          },
+          }
         ]
       }
     },

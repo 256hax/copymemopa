@@ -2,11 +2,14 @@
   "name": "表形式でコピペ管理：メモペ",
   "short_name": "メモペ",
   "description" : "コピー＆ペースト作業がたくさんある場合に「コピーしてメモしてペースト」が、表形式でかんたんに管理できるメモ帳です。",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "manifest_version": 2,
   "browser_action": {
     "default_popup": "index.html",
     "default_icon": "assets/images/logo/blue-squares-1-24-240544.png"
+  },
+  "background": {
+    "page": "index.html"
   },
   "icons" : {
     "16": "assets/images/logo/blue-squares-1-16-240544.png",
