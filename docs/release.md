@@ -31,3 +31,6 @@ $ cp -r release/latest/ release/[new version]/
 
 ## Pack Extension
 Pack Extension release/latest/ directory on Google Chrome.
+
+## Publish to Chrome Webstore
+Go to Chrome Webstore Developer Dashboard then, deploy release files(filetype:zip).
