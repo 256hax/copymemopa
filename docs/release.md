@@ -29,6 +29,11 @@ Then duplicate to new version directory.
 $ cp -r release/latest/ release/[new version]/
 ```
 
+## Update README
+```
+$ vi README.md
+```
+
 ## Pack Extension
 Pack Extension release/latest/ directory on Google Chrome.
 
