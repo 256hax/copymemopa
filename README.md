@@ -23,3 +23,13 @@ Copy and Paste Memo Pad for Google Chrome Extensions.
 ## Thankyou
 - [vue-clipboard2](https://github.com/Inndy/vue-clipboard2)
 - [freefavicon](https://www.freefavicon.com/)
+
+## Version History
+### v1.0.2
+Fix security vulnerability.
+
+### v1.0.1
+Fix delay open when run App.
+
+### v1.0.0
+First release.
