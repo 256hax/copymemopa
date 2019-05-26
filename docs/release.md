@@ -1,55 +1,52 @@
 # Release Step
-## Update Version manifest.json
+## 1. Build and Test
+### Update Version manifest.json
 Count up "version". Don't rewrite "manifest_version".
 
 ```
 $ vi manifest.json
 ```
 
-## Update Version package.json
+### Update Version package.json
 Count up "version".
 
 ```
 $ vi package.json
 ```
 
-## Build Files
+### Build Files
 ```
 $ cd [PJ root directory]
 $ yarn run build
 ```
-=> make or replace dist directory (build files). [memo] It's not override.
+=> replace "dist" directory (build files).
 
-## Deploy Release files
+### Put manifest.json
+Chrome Webstore need manifest.json.
 ```
-$ rm -r release/latest/
-$ mkdir release/latest/
-$ cp -r dist/* release/latest/
-$ cp manifest.json release/latest/
+$ cp manifest.json dist
 ```
 
-Then duplicate to new version directory.
-```
-$ cp -r release/latest/ release/[new version]/
-```
-
-## Update README
+### Update README
 ```
 $ vi README.md
 ```
 
-## Pack Extension and Test
-1. Open Google Chrome Extensions List on your Chrome settings. then drag "release/latest/" directory to Extensions List.
-2. Test program
+### Pack Extension and Test
+1. Open Google Chrome Extensions List on your Chrome settings. then drag "dist" directory to Extensions List.
+2. Test Extension
 
-## Publish to Chrome Webstore
+## 2. Publish to Chrome Webstore
 ### Zip
 ```
-$ cd release
-$ rm release/latest.zip
-$ zip -r latest.zip latest/
+$ zip -ry copymemopa.zip dist
 ```
 
 ### Publish
 1. Go to [Chrome Webstore Developer Dashboard](https://chrome.google.com/webstore/developer/dashboard?hl=ja)
-2. Edit target Chrome Extension App. Then upload latest files(filetype:zip).
+2. Edit target Chrome Extension App. Then upload release zip file.
+
+## 3. Release to GitHub
+### Deploy Release File
+1. Go to [GitHub Releases](https://github.com/256hax/copymemopa/releases)
+2. Creat a new release. Then upload release zip file.

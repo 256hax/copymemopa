@@ -5,7 +5,7 @@ Copy and Paste Memo Pad for Google Chrome Extensions.
 
 ![メモペ](https://raw.githubusercontent.com/256hax/copymemopa/master/docs/screenshot-extension.png)
 
-## Publish Extension
+## Google Chrome Webstore
 [Chromeウェブストア - 表形式でコピペ管理：メモペ](https://chrome.google.com/webstore/detail/%E8%A1%A8%E5%BD%A2%E5%BC%8F%E3%81%A7%E3%82%B3%E3%83%94%E3%83%9A%E7%AE%A1%E7%90%86%EF%BC%9A%E3%83%A1%E3%83%A2%E3%83%9A/ehndjibjmfffbbdiaomhbiflpneiflif?hl=ja)
 
 ## Functions
@@ -25,11 +25,11 @@ Copy and Paste Memo Pad for Google Chrome Extensions.
 - [freefavicon](https://www.freefavicon.com/)
 
 ## CHANGELOG
-### 1.0.2
-Fix security vulnerability.
+### v1.0.2
+Update latest yarn packages.
 
-### 1.0.1
+### v1.0.1
 Fix delay open when run App.
 
-### 1.0.0
+### v1.0.0
 First release.
