@@ -47,6 +47,5 @@ $ zip -ry copymemopa.zip dist
 2. Edit target Chrome Extension App. Then upload release zip file.
 
 ## 3. Release to GitHub
-### Deploy Release File
 1. Go to [GitHub Releases](https://github.com/256hax/copymemopa/releases)
 2. Creat a new release. Then upload release zip file.

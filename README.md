@@ -8,7 +8,7 @@ Copy and Paste Memo Pad for Google Chrome Extensions.
 ## Google Chrome Webstore
 [Chromeウェブストア - 表形式でコピペ管理：メモペ](https://chrome.google.com/webstore/detail/%E8%A1%A8%E5%BD%A2%E5%BC%8F%E3%81%A7%E3%82%B3%E3%83%94%E3%83%9A%E7%AE%A1%E7%90%86%EF%BC%9A%E3%83%A1%E3%83%A2%E3%83%9A/ehndjibjmfffbbdiaomhbiflpneiflif?hl=ja)
 
-## Functions
+## Features
 - Add Memo for Copy&Paste. メモの登録（コピー＆ペーストしたい文字の登録）
 - Copy to Clipboard for Memo. メモをクリップボードにコピー
 - Search. メモの検索
