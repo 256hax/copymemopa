@@ -25,6 +25,9 @@ Copy and Paste Memo Pad for Google Chrome Extensions.
 - [freefavicon](https://www.freefavicon.com/)
 
 ## CHANGELOG
+### v1.0.3
+Update latest yarn packages.
+
 ### v1.0.2
 Update latest yarn packages.
 

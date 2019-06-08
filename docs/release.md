@@ -19,7 +19,7 @@ $ vi package.json
 $ cd [PJ root directory]
 $ yarn run build
 ```
-=> replace "dist" directory (build files).
+=> Yarn replaced "dist" directory (build files).
 
 ### Put manifest.json
 Chrome Webstore need manifest.json.
