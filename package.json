@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "audit": "^0.0.6",
+    "glob-parent": "^5.1.2",
     "npm": "^7.7.6",
     "v-clipboard": "^2.0.1",
     "vue": "^2.5.17",
